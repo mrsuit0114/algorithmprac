@@ -2,6 +2,8 @@
 def solution(n, lost, reserve):
     _reserve = [r for r in reserve if r not in lost]
     _lost = [l for l in lost if l not in reserve]
+    _reserve.sort()
+    _lost.sort()
     for r in _reserve:
         f = r - 1
         b = r + 1
