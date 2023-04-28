@@ -1,20 +1,6 @@
 def solution(gems):
     answer = []
-    dic = {}
-    for gem in gems:
-        dic[gem] = 1
     
-    s = len(dic.items())
-
-    lp = 0
-    rp = 0
-
-    lpp = []
-
-    tmp = ""
-
-    
-
     
     return answer
 

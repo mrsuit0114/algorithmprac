@@ -2,16 +2,15 @@ def solution(numbers):
     answer = [-1] * len(numbers)
     stk = []
     for i in range(len(numbers)):
-        if stk:
-            for i in reversed(stk):
-                
+        if stk :
+            while stk and stk[-1][0]<numbers[i]:
+                tmp = stk.pop()
+                answer[tmp[1]] = numbers[i]
+        stk.append([numbers[i],i])
 
 
     return answer
 
 
-# 스택쓰는거같은데..
-# numbers 앞에서부터 보면서 스택이 비어있으면 해당 값과 인덱스를 넣고
-# 스택이 비어있으면 일단 넣고
-# 스택이 안비어있으면 원소랑 비교
+# 스택에 (값,idx)넣고 number와 비교,number가 작거나 같으면 스택에 넣고, 큰동안 pop
 
