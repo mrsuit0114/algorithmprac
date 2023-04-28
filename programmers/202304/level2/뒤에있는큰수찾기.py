@@ -2,10 +2,10 @@ def solution(numbers):
     answer = [-1] * len(numbers)
     stk = []
     for i in range(len(numbers)):
-        if stk :
-            while stk and stk[-1][0]<numbers[i]:
-                tmp = stk.pop()
-                answer[tmp[1]] = numbers[i]
+        # if stk :
+        while stk and stk[-1][0]<numbers[i]:
+            tmp = stk.pop()
+            answer[tmp[1]] = numbers[i]
         stk.append([numbers[i],i])
 
 
