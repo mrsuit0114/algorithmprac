@@ -1,19 +1,27 @@
+# 다른사람 힌트 2차원배열을 좌표로 봤을때 xy중 큰값이 해당 값
+
 import math
 
 def solution(n, left, right):
     answer = []
-    lr = math.floor(left/n)+1
+    lr = math.ceil(left/n)
     lc = left%n
-    rr = math.floor(right/n)+1
+    rr = math.ceil(right/n)
     rc = right%n
 
     for i in range(lr,rr+1):
-        answer = answer + [i]*i
+        tmp = [i]*i
         for j in range(i,n):
-            answer.append(j+1)
+            tmp.append(j+1)
+        answer+=tmp
+    
+    answer = answer[lc:n*(rr-lr)+rc+1]
 
+    return answer
 
-    return answer[lc:n*(rr-1)+rc]
+# tc 1,2 실패.. 왜지 처리시간이랑 용량보면 특수한상황은 아닌거같은데
+
+solution(3,2,5)
 
 
 # def solution(n, left, right):
@@ -26,8 +34,6 @@ def solution(n, left, right):
 
 #     return answer[left:right+1]
 
-print(solution(3,2,5))
-print(solution(4,7,14))
 
 # 슬라이싱이 필요한 부분까지만 배열을 만들어야함
 # 우선 필요한 행을 1차원 배열로 만들고 이후 슬라이싱하자
