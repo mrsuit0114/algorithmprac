@@ -13,25 +13,15 @@ for s in exp:
     if "A"<=s and s<="Z":
         stk.append(arr[ord(s)-ord("A")])
     else:
+        y = stk.pop()
+        x = stk.pop()
         if s == "*":
-            y = stk.pop()
-            x = stk.pop()
             x *=y
-            stk.append(x)
         elif s == "/":
-            y = stk.pop()
-            x = stk.pop()
             x /=y
-            stk.append(x)
         elif s == "+":
-            y = stk.pop()
-            x = stk.pop()
             x +=y
-            stk.append(x)
         elif s == "-":
-            y = stk.pop()
-            x = stk.pop()
             x -=y
-            stk.append(x)
+        stk.append(x)
 print(format(stk[0],".2f"))
-
