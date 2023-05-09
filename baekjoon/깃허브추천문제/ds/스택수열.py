@@ -4,7 +4,8 @@ input = sys.stdin.readline
 
 n = int(input())
 ans = []
-brk = 0  #스택의 제일 위의 원소
+stk = []
+# brk = 0  #스택의 제일 위의 원소
 count = 1
 
 for i in range(n):
